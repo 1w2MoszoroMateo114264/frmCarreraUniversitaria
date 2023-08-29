@@ -45,10 +45,6 @@ namespace frmCarreraUniversitaria.Entidades
             Detalles.RemoveAt(posicion);
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
 
     }
 }
