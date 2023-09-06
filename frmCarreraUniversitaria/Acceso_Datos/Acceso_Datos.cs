@@ -40,6 +40,21 @@ namespace frmCarreraUniversitaria.Acceso_Datos
             return tabla;
         }
 
+        public DataTable ConsultarTabla(string sp_nombre, List<Parametros> lstParametros)
+        {
+            Conectar();
+            comando.CommandText= sp_nombre;
+            comando.Parameters.Clear();
+            foreach (Parametros param in lstParametros)
+            {
+                comando.Parameters.AddWithValue(param.Clave, param.Valor);
+            }
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
+
         public int ProximoInsert(string sp_nombre)
         {
             Conectar();

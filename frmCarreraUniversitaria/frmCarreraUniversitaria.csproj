@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso_Datos\Acceso_Datos.cs" />
+    <Compile Include="Acceso_Datos\Parametros.cs" />
     <Compile Include="Entidades\Asignatura.cs" />
     <Compile Include="Entidades\Asignatura_Servicios.cs" />
     <Compile Include="Entidades\Carrera.cs" />

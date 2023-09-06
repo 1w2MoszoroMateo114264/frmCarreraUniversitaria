@@ -54,7 +54,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(155, 325);
+            this.btnEliminar.Location = new System.Drawing.Point(135, 325);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(117, 30);
             this.btnEliminar.TabIndex = 14;
@@ -69,6 +69,7 @@
             this.btnSalir.TabIndex = 15;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // grpFiltros
             // 
@@ -106,6 +107,7 @@
             this.btnConsultar.TabIndex = 1;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // dgvCarreras
             // 
@@ -121,6 +123,7 @@
             this.dgvCarreras.ReadOnly = true;
             this.dgvCarreras.Size = new System.Drawing.Size(453, 164);
             this.dgvCarreras.TabIndex = 11;
+            this.dgvCarreras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarreras_CellContentClick);
             // 
             // ColumID
             // 
@@ -141,6 +144,8 @@
             this.ColumAcciones.HeaderText = "Acciones";
             this.ColumAcciones.Name = "ColumAcciones";
             this.ColumAcciones.ReadOnly = true;
+            this.ColumAcciones.Text = "Ver Detalles";
+            this.ColumAcciones.UseColumnTextForButtonValue = true;
             // 
             // FrmConsultarCarreras
             // 
@@ -154,6 +159,7 @@
             this.Controls.Add(this.dgvCarreras);
             this.Name = "FrmConsultarCarreras";
             this.Text = "FrmConsultarCarreras";
+            this.Load += new System.EventHandler(this.FrmConsultarCarreras_Load);
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarreras)).EndInit();

@@ -22,5 +22,11 @@ namespace frmCarreraUniversitaria
             Presentacion.FrmNuevaCarrera nuevo = new Presentacion.FrmNuevaCarrera();
             nuevo.ShowDialog();
         }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentacion.FrmConsultarCarreras Consulta = new Presentacion.FrmConsultarCarreras();
+            Consulta.ShowDialog();
+        }
     }
 }
