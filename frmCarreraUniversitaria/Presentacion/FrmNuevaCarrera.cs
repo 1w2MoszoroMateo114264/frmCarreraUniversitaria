@@ -15,14 +15,14 @@ namespace frmCarreraUniversitaria.Presentacion
         private Entidades.Asignatura_Servicios AsigServ;
         private Entidades.Detalle_Carrera_Servicio DcServ;
         private Entidades.Carrera Carrera;
+        private Entidades.Carrera_Servicios CarreServ;
         public FrmNuevaCarrera()
         {
+            InitializeComponent();
             AsigServ = new Entidades.Asignatura_Servicios();
             DcServ = new Entidades.Detalle_Carrera_Servicio();
             Carrera = new Entidades.Carrera();
-            InitializeComponent();
-            CargarCombo(cboAsignaturas);
-            lblCarreraNro.Text = lblCarreraNro.Text + "  " + DcServ.ProximaCarrera().ToString();
+            CarreServ = new Entidades.Carrera_Servicios();
         }
 
         private void CargarCombo(ComboBox combo)
@@ -110,6 +110,46 @@ namespace frmCarreraUniversitaria.Presentacion
         private void dtpAnioCursado_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmNuevaCarrera_Load(object sender, EventArgs e)
+        {
+            CargarCombo(cboAsignaturas);
+            lblCarreraNro.Text = lblCarreraNro.Text + "  " + DcServ.ProximaCarrera().ToString();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTitulo.Text))
+            {
+                MessageBox.Show("Debe ingresar un Titulo Valido", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (dgvDetalle.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe ingresar al menos una asignatura...", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            GrabarCarrera();
+        }
+
+        private void GrabarCarrera()
+        {
+            Carrera.Nombre = txtTitulo.Text;
+            if (CarreServ.InsertarCarrera(Carrera))
+            {
+                MessageBox.Show("Se registró con éxito la Carrera...", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("NO se pudo registrar la Carrera...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

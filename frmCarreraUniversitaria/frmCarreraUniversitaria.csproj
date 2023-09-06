@@ -50,8 +50,15 @@
     <Compile Include="Entidades\Asignatura.cs" />
     <Compile Include="Entidades\Asignatura_Servicios.cs" />
     <Compile Include="Entidades\Carrera.cs" />
+    <Compile Include="Entidades\Carrera_Servicios.cs" />
     <Compile Include="Entidades\Detalle_Carrera.cs" />
     <Compile Include="Entidades\Detalle_Carrera_Servicio.cs" />
+    <Compile Include="Presentacion\FrmConsultarCarreras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmConsultarCarreras.Designer.cs">
+      <DependentUpon>FrmConsultarCarreras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmNuevaCarrera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\FrmConsultarCarreras.resx">
+      <DependentUpon>FrmConsultarCarreras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmNuevaCarrera.resx">
       <DependentUpon>FrmNuevaCarrera.cs</DependentUpon>
     </EmbeddedResource>

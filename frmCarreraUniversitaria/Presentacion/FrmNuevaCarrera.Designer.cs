@@ -102,7 +102,8 @@
             // 
             // dtpAnioCursado
             // 
-            this.dtpAnioCursado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpAnioCursado.CustomFormat = "yyyy";
+            this.dtpAnioCursado.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpAnioCursado.Location = new System.Drawing.Point(206, 152);
             this.dtpAnioCursado.Name = "dtpAnioCursado";
             this.dtpAnioCursado.Size = new System.Drawing.Size(160, 20);
@@ -205,6 +206,7 @@
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -215,6 +217,7 @@
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblTitulo
             // 
@@ -254,6 +257,7 @@
             this.Controls.Add(this.lblCarreraNro);
             this.Name = "FrmNuevaCarrera";
             this.Text = "Nueva Carrera";
+            this.Load += new System.EventHandler(this.FrmNuevaCarrera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
